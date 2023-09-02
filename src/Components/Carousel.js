@@ -57,7 +57,7 @@ const items = [
   
     return (
       <>
-        <h2 className='text-center font-serif text-white text-3xl pb-5 lg:p-0'>Galeria</h2>
+        <h2 id='galeria' className='text-center font-serif text-white text-3xl pb-5 lg:p-0'>Galeria</h2>
         <Slider ref={sliderRef} arrows={false} {...settings}>
         {items.map((item, index) => (
           <div className='px-4 font-serif text-white' key={index} >

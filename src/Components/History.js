@@ -23,7 +23,7 @@ const contentData = [
 
 const History = () => {
   return (
-    <section className="historySection pb-8 mt-20 px-6 text-white font-serif">
+    <section id='history' className="historySection pb-8 mt-20 px-6 text-white font-serif">
       <h1 className="text-center text-3xl pb-6">Historia del Volkswagen</h1>
       <div className="text-justify text-base flex flex-col gap-8 md:flex-row md:px-3">
         {contentData &&

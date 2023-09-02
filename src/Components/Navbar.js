@@ -1,15 +1,27 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { IoAppsSharp } from "react-icons/io5";
 
+
 const navigation = [
-  { name: 'Historia', href: '#', current: false },
-  { name: 'Galeria', href: '#', current: false },
-  { name: 'Tu Historia', href: '#', current: false },
+  { name: 'Historia', href: '#history', current: false },
+  { name: 'Galeria', href: '#galeria', current: false },
+  { name: 'Tu Historia', href: '#comments', current: false },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+
+const handleNavClick = (e, href) => {
+  e.preventDefault();
+  const target = document.querySelector(href);
+  if (target) {
+    window.scrollTo({
+      top: target.offsetTop - 78, // Ajusta esto según sea necesario
+      behavior: 'smooth',
+    });
+  }
+};
 
 export default function Navbar() {
   return (
@@ -41,17 +53,19 @@ export default function Navbar() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-black hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
+                       <a
+                       key={item.name}
+                       href={item.href}
+                       onClick={(e) => handleNavClick(e, item.href)}
+                       className={classNames(
+                         item.current ? 'bg-gray-900 text-white' : 'text-black hover:bg-gray-700 hover:text-white',
+                         'rounded-md px-3 py-2 text-sm font-medium'
+                       )}
+                       aria-current={item.current ? 'page' : undefined}
+                     >
+                       {item.name}
+                     </a>
+                      
                     ))}
                   </div>
                 </div>
@@ -63,7 +77,7 @@ export default function Navbar() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
+                  as="link"
                   href={item.href}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-black hover:bg-gray-700 hover:text-white',

@@ -30,7 +30,7 @@ function Formulario({ comments, onChange }) {
 
   return (
     <>
-      <h2 className="text-center font-serif text-white pb-4 text-3xl">
+      <h2 id='comments' className="text-center font-serif text-white pb-4 text-3xl">
         Nuestra Historia
       </h2>
       <div className="flex flex-wrap m-8 font-serif text-white lg:flex-nowrap lg:space-x-10">

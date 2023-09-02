@@ -17,7 +17,7 @@ function Home() {
     });
 
   useEffect(() => {
-    handleOnChange();
+    handleOnChange()
   }, []);
   return (
     <>
