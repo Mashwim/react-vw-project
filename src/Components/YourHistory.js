@@ -50,10 +50,10 @@ function Formulario({ comments, onChange }) {
               <p className="normal-case break-word text-black indent-5">
                 {publicacion.comentario}
               </p>
-              <BsFillTrashFill 
+              {/* <BsFillTrashFill 
               className="text-black mt-3 hover:text-red-800 cursor-pointer"
-              onClick={handleDelete}
-              />
+              onClick={}
+              /> */}
             </div>
           ))}
         </div>
