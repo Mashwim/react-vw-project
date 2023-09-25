@@ -66,7 +66,7 @@ const items = [
                 <img className='rounded-lg mx-auto max-w-md w-full' src={require(`../img/Type_${item.img}.jpg`)} alt={`${index + 1}`} />
               </div>
               <div className=' text px-4 lg:w-2/4 md:px-7'>
-                <h2 className='text-center text-lg pb-2'>{item.name}</h2>
+                <h2 className='text-center text-lg py-2'>{item.name}</h2>
                 <h3 className='pb-2'>{item.version}</h3>
                 <p className='text-base text-justify indent-8 lg:pr-7'>{item.text}</p>
               </div>

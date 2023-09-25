@@ -4,7 +4,10 @@ const Footer = () => {
   return (
     <>
     <div className='w-full h-52 bg-black flex items-center justify-center'>
-      <p className='font-serif text-white'>2023</p>
+      <p className='font-serif text-white'>
+        copyright &copy; 
+        <span id='date'>{new Date().getFullYear()}</span>
+      </p>
     </div>
     </>
   );

@@ -46,7 +46,7 @@ function useFirebase() {
     }
   };
 
-  return { posts, fetchPosts, postComment };
-}
+  return { posts, fetchPosts, postComment, setPosts };
+};
 
-export default useFirebase;
+export default useFirebase ;

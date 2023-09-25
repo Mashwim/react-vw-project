@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import useFirebase from "../hooks/useFirebase";
+import useFirebase  from "../hooks/useFirebase.jsx";
+import { BsFillTrashFill } from "react-icons/bs";
+
 
 function Formulario({ comments, onChange }) {
-  const { postComment } = useFirebase();
+  const { fetchPosts, postComment } = useFirebase();
   const [nombre, setNombre] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [publicaciones, setPublicaciones] = useState(comments);
@@ -22,11 +24,13 @@ function Formulario({ comments, onChange }) {
     await onChange()
     // onChange(nuevaPublicacion);
     // setPublicaciones([...publicaciones, nuevaPublicacion]);
-
+  
     // Limpia los campos del formulario
     setNombre("");
     setMensaje("");
+    
   };
+    
 
   return (
     <>
@@ -46,6 +50,10 @@ function Formulario({ comments, onChange }) {
               <p className="normal-case break-word text-black indent-5">
                 {publicacion.comentario}
               </p>
+              <BsFillTrashFill 
+              className="text-black mt-3 hover:text-red-800 cursor-pointer"
+              onClick={handleDelete}
+              />
             </div>
           ))}
         </div>
