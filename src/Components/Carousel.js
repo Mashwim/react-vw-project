@@ -43,7 +43,8 @@ const items = [
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 4000,
-      adaptiveHeight: true
+      adaptiveHeight: true,
+      pauseOnHover: true,
       
     };
 
@@ -57,7 +58,7 @@ const items = [
   
     return (
       <>
-        <h2 id='galeria' className='text-center font-serif text-white text-3xl pb-5 lg:p-0'>Galeria</h2>
+        <h2 id='galeria' className='text-center font-serif text-white text-3xl pb-5 lg:p-0 underline underline-offset-8 decoration-white'>Galería</h2>
         <Slider ref={sliderRef} arrows={false} {...settings}>
         {items.map((item, index) => (
           <div className='px-4 font-serif text-white' key={index} >

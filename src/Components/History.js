@@ -24,10 +24,10 @@ const contentData = [
 const History = () => {
   return (
     <section id='history' className="historySection pb-8 mt-20 px-6 text-white font-serif">
-      <h1 className="text-center text-3xl pb-6">Historia del Volkswagen</h1>
+      <h1 className="text-center text-3xl pb-6 underline underline-offset-8 decoration-white">Historia del Volkswagen</h1>
       <div className="text-justify text-base flex flex-col gap-8 md:flex-row md:px-3">
         {contentData &&contentData.map((item) => (
-          <article key={item.id}>
+          <article key={item.id} className="">
             <p className="pb-6 indent-8">{item.text}</p>
               <img
               className="rounded-lg mx-auto max-w-md w-full"
